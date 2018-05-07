@@ -6,7 +6,9 @@ declare module 'hapi' {
   interface ServerAuth {
     strategy(name: string, scheme: 'cookie', options?: HapiAuthCookie.RegisterOptions): void;
   }
+}
 
+declare module 'hapi' {
   interface ServerRoute {
     auth?: {
       mode?: any
