@@ -6,6 +6,17 @@ declare module 'hapi' {
   interface ServerAuth {
     strategy(name: string, scheme: 'cookie', options?: HapiAuthCookie.RegisterOptions): void;
   }
+
+  interface ServerRoute {
+    auth?: {
+      mode?: any
+    };
+    plugins?: {
+      'hapi-auth-cookie'?: {
+        redirectTo?: boolean;
+      }
+    };
+  }
 }
 
 declare namespace HapiAuthCookie {
