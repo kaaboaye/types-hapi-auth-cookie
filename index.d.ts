@@ -25,10 +25,12 @@ declare namespace HapiAuthCookie {
     redirectOnTry?: boolean;
     requestDecoratorName?: string;
 
-    validateFunc?(request: Request, session: object): Promise<{
-      valid: boolean;
-      credentials: object;
-    }>
+    validateFunc?(request: Request, session: object): Promise<validateFuncOut>
+  }
+
+  interface validateFuncOut {
+    valid: boolean;
+    credentials?: object;
   }
 }
 
